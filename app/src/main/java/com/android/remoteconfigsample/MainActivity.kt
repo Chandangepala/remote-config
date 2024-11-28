@@ -87,7 +87,7 @@ fun MainUI(modifier: Modifier = Modifier) {
 
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
-    var isVisible by remember { mutableStateOf(false) }
+    var isVisible by remember { mutableStateOf(true) }
     isVisible = Firebase.remoteConfig.getBoolean("show_background_image")
     Box(modifier = Modifier.fillMaxWidth()) {
         if(isVisible){
@@ -111,7 +111,7 @@ fun TypeSomething(modifier: Modifier = Modifier) {
                 text = it
             },
             label = { Text("Type something...") },
-            modifier = Modifier.align(Alignment.Center)
+            modifier = Modifier.align(Alignment.Center).padding(50.dp)
         )
     }
 }
